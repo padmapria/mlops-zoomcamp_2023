@@ -1,0 +1,82 @@
+https://github.com/DataTalksClub/mlops-zoomcamp/tree/main/01-intro
+
+Install anaconda
+----
+wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh
+savig to <somepath>
+bash <saving to path>
+acpt licence
+
+Next we will create a dir <soft>, where we will maintain all our software
+-------------------------------------------------
+mkdir soft
+
+To make items in soft folder accesscible from anywhere
+-----------------------------------------------------
+nano .bashrc
+Include the below line in .bashrc in the end
+------------------------ 
+export PATH="${HOME}/soft:${PATH}"
+source .bashrc
+
+cd soft
+
+Install docker
+-----
+sudo apt install docker.io
+
+Install docker compose
+-----------
+wget https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-linux-x86_64 -O docker-compose
+chmod +x docker-compose
+
+
+Test docker
+-----------
+which docker-compose
+sudo docker run hello-world
+
+Follow the first 3 steps to run docker without sudo
+---------------------------------------------------
+https://docs.docker.com/engine/install/linux-postinstall/
+sudo groupadd docker
+sudo usermod -aG docker $USER
+<log out and relogin>
+
+docker run hello-world
+
+cd..
+
+Gitclone mlops github
+------------------------
+git clone https://github.com/DataTalksClub/mlops-zoomcamp.git
+cd mlops-zoomcamp
+
+in visual studio code of local computer
+----------------------------------
+Install remote-ssh , to use mlops-zoomcamp from local computer
+
+in visualstudio, next to the terminal tab below, there is a tab called ports in it include below
+--------------------------------------------------------------------------------
+port : 8888
+local address: localhost:8888
+
+cd..
+
+create a notebook folder for jupyter notebook
+---------------------------------------------
+mkdir notebooks
+cd notebooks
+
+mkdir data
+cd data
+wget https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-01.parquet
+wget https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-02.parquet
+jupyter notebook
+
+use the url  to open jupyter notebook in the browser
+
+packagess needed
+----------------------
+!pip install pyarrow
+df = pd.read_parquet('./data/<foldername>)
