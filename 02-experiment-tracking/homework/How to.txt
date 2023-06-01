@@ -1,18 +1,25 @@
 cd to homework folder
-
 1)install the needed libraries
 pip install -r requirement.txt
 
-2) prepare the data
+2) preprocess the input data
 python preprocess_data.py --raw_data_path data --dest_path ./output
 
-3)train the model
+3)Train a model with autolog
 python train.py
 
-4) start the mlflow ui from a new terminal (we store all the mlflow metadta and artifacts in mlflow.db)
+4) Launch the tracking server locally for MLflow
+start the mlflow ui from a new terminal using the below code(we store all the mlflow metadta and artifacts in mlflow.db)
+
 cd to homework folder new terminal
 https://mlflow.org/docs/latest/tracking.html#tracking-ui
 mlflow ui --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlflow-artifacts --host 0.0.0.0
+
+5) Tune model hyperparameters
+python hpo.py
+
+6) Promote the best model to the model registry
+python register_model.py
 
 Things to note
 ------------------
