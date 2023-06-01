@@ -1,0 +1,19 @@
+cd to homework folder
+
+1)install the needed libraries
+pip install -r requirement.txt
+
+2) prepare the data
+python preprocess_data.py --raw_data_path data --dest_path ./output
+
+3)train the model
+python train.py
+
+4) start the mlflow ui from a new terminal (we store all the mlflow metadta and artifacts in mlflow.db)
+cd to homework folder new terminal
+https://mlflow.org/docs/latest/tracking.html#tracking-ui
+mlflow ui --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlflow-artifacts --host 0.0.0.0
+
+Things to note
+------------------
+Autolog makes the logging process easy, it logs all the params, 
