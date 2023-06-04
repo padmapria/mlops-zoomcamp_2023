@@ -1,0 +1,185 @@
+2023-06-04 19:37:58,351 INFO    StreamThr :14144 [internal.py:wandb_internal():86] W&B internal server running at pid: 14144, started at: 2023-06-04 19:37:58.350423
+2023-06-04 19:37:58,352 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: status
+2023-06-04 19:37:58,360 INFO    WriterThread:14144 [datastore.py:open_for_write():85] open: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\run-ztfhojjp.wandb
+2023-06-04 19:37:58,360 DEBUG   SenderThread:14144 [sender.py:send():375] send: header
+2023-06-04 19:37:58,414 DEBUG   SenderThread:14144 [sender.py:send():375] send: run
+2023-06-04 19:37:59,055 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: check_version
+2023-06-04 19:37:59,055 INFO    SenderThread:14144 [dir_watcher.py:__init__():219] watching files in: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files
+2023-06-04 19:37:59,056 INFO    SenderThread:14144 [sender.py:_start_run_threads():1124] run started: ztfhojjp with start time 1685878678.3539
+2023-06-04 19:37:59,056 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: summary_record
+2023-06-04 19:37:59,057 INFO    SenderThread:14144 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-04 19:37:59,058 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: check_version
+2023-06-04 19:37:59,254 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: run_start
+2023-06-04 19:37:59,284 DEBUG   HandlerThread:14144 [system_info.py:__init__():31] System info init
+2023-06-04 19:37:59,284 DEBUG   HandlerThread:14144 [system_info.py:__init__():46] System info init done
+2023-06-04 19:37:59,284 INFO    HandlerThread:14144 [system_monitor.py:start():181] Starting system monitor
+2023-06-04 19:37:59,286 INFO    SystemMonitor:14144 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-06-04 19:37:59,286 INFO    HandlerThread:14144 [system_monitor.py:probe():201] Collecting system info
+2023-06-04 19:37:59,294 INFO    SystemMonitor:14144 [interfaces.py:start():190] Started cpu monitoring
+2023-06-04 19:37:59,295 DEBUG   HandlerThread:14144 [system_info.py:probe():195] Probing system
+2023-06-04 19:37:59,297 INFO    SystemMonitor:14144 [interfaces.py:start():190] Started disk monitoring
+2023-06-04 19:37:59,299 INFO    SystemMonitor:14144 [interfaces.py:start():190] Started memory monitoring
+2023-06-04 19:37:59,316 INFO    SystemMonitor:14144 [interfaces.py:start():190] Started network monitoring
+2023-06-04 19:37:59,334 DEBUG   HandlerThread:14144 [system_info.py:_probe_git():180] Probing git
+2023-06-04 19:37:59,518 DEBUG   HandlerThread:14144 [system_info.py:_probe_git():188] Probing git done
+2023-06-04 19:37:59,518 DEBUG   HandlerThread:14144 [system_info.py:probe():240] Probing system done
+2023-06-04 19:37:59,518 DEBUG   HandlerThread:14144 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.9.16', 'heartbeatAt': '2023-06-04T11:37:59.296423', 'startedAt': '2023-06-04T11:37:58.318496', 'docker': None, 'cuda': None, 'args': ('--wandb_project', 'experiment_tracking_2', '--wandb_entity', 'deepika3-deepika3', '--data_artifact', 'deepika3-deepika3/experiment_tracking_2/NYC-Taxi:v0'), 'state': 'running', 'program': 'D:\\z_ML\\mlops_zoom_practice\\02-experiment-tracking\\homework-wandb\\sweep.py', 'codePath': '02-experiment-tracking\\homework-wandb\\sweep.py', 'git': {'remote': 'https://github.com/padmapria/mlops-zoomcamp_2023.git', 'commit': 'fe50d152667add809e9edd6e3797aafb04953287'}, 'email': 'deepika3.deepika3@gmail.com', 'root': 'D:/z_ML/mlops_zoom_practice', 'host': 'Padmapriya_sri', 'username': 'padma', 'executable': 'C:\\Users\\padma\\anaconda3\\python.exe', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 2496.0, 'min': 0.0, 'max': 2496.0}, 'cpu_freq_per_core': [{'current': 2496.0, 'min': 0.0, 'max': 2496.0}], 'disk': {'total': 488.28124618530273, 'used': 44.485198974609375}, 'memory': {'total': 31.727603912353516}}
+2023-06-04 19:37:59,518 INFO    HandlerThread:14144 [system_monitor.py:probe():211] Finished collecting system info
+2023-06-04 19:37:59,518 INFO    HandlerThread:14144 [system_monitor.py:probe():214] Publishing system info
+2023-06-04 19:37:59,518 DEBUG   HandlerThread:14144 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-06-04 19:37:59,521 DEBUG   HandlerThread:14144 [system_info.py:_save_pip():67] Saving pip packages done
+2023-06-04 19:37:59,521 DEBUG   HandlerThread:14144 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-06-04 19:38:00,057 INFO    Thread-16 :14144 [dir_watcher.py:_on_file_created():278] file/dir created: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\conda-environment.yaml
+2023-06-04 19:38:00,058 INFO    Thread-16 :14144 [dir_watcher.py:_on_file_created():278] file/dir created: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\wandb-summary.json
+2023-06-04 19:38:00,058 INFO    Thread-16 :14144 [dir_watcher.py:_on_file_created():278] file/dir created: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\requirements.txt
+2023-06-04 19:38:02,541 DEBUG   HandlerThread:14144 [system_info.py:_save_conda():86] Saving conda packages done
+2023-06-04 19:38:02,543 INFO    HandlerThread:14144 [system_monitor.py:probe():216] Finished publishing system info
+2023-06-04 19:38:02,551 DEBUG   SenderThread:14144 [sender.py:send():375] send: files
+2023-06-04 19:38:02,551 INFO    SenderThread:14144 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-06-04 19:38:02,558 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-04 19:38:02,559 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: stop_status
+2023-06-04 19:38:02,859 DEBUG   SenderThread:14144 [sender.py:send():375] send: telemetry
+2023-06-04 19:38:03,090 INFO    Thread-16 :14144 [dir_watcher.py:_on_file_modified():295] file/dir modified: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\conda-environment.yaml
+2023-06-04 19:38:03,091 INFO    Thread-16 :14144 [dir_watcher.py:_on_file_created():278] file/dir created: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\wandb-metadata.json
+2023-06-04 19:38:03,302 INFO    wandb-upload_0:14144 [upload_job.py:push():137] Uploaded file C:\Users\padma\AppData\Local\Temp\tmp61ikyl5owandb\3znyytl0-wandb-metadata.json
+2023-06-04 19:38:03,440 DEBUG   SenderThread:14144 [sender.py:send():375] send: use_artifact
+2023-06-04 19:38:03,441 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: status_report
+2023-06-04 19:38:04,100 INFO    Thread-16 :14144 [dir_watcher.py:_on_file_created():278] file/dir created: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\output.log
+2023-06-04 19:38:06,117 INFO    Thread-16 :14144 [dir_watcher.py:_on_file_modified():295] file/dir modified: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\output.log
+2023-06-04 19:38:07,266 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-04 19:38:07,267 DEBUG   SenderThread:14144 [sender.py:send():375] send: history
+2023-06-04 19:38:07,267 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: summary_record
+2023-06-04 19:38:07,269 INFO    SenderThread:14144 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-04 19:38:07,594 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: log_artifact
+2023-06-04 19:38:07,595 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: log_artifact
+2023-06-04 19:38:08,143 INFO    Thread-16 :14144 [dir_watcher.py:_on_file_modified():295] file/dir modified: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\wandb-summary.json
+2023-06-04 19:38:08,609 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: poll_exit
+2023-06-04 19:38:10,632 INFO    wandb-upload_0:14144 [upload_job.py:push():95] Uploaded file C:\Users\padma\AppData\Local\wandb\wandb\artifacts\staging\tmpq8rpyypn
+2023-06-04 19:38:11,698 INFO    SenderThread:14144 [sender.py:send_request_log_artifact():1438] logged artifact ztfhojjp-model - {'id': 'QXJ0aWZhY3Q6NDc2OTk2MzY2', 'digest': 'ee76563e3f686ae72facbf706286ed33', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjc0MTUzNzg2', 'latestArtifact': None}, 'version': 'latest'}
+2023-06-04 19:38:11,698 DEBUG   SenderThread:14144 [sender.py:send():375] send: telemetry
+2023-06-04 19:38:11,699 DEBUG   SenderThread:14144 [sender.py:send():375] send: exit
+2023-06-04 19:38:11,700 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: status_report
+2023-06-04 19:38:11,700 INFO    SenderThread:14144 [sender.py:send_exit():598] handling exit code: 0
+2023-06-04 19:38:11,702 INFO    SenderThread:14144 [sender.py:send_exit():600] handling runtime: 8
+2023-06-04 19:38:11,709 INFO    SenderThread:14144 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-04 19:38:11,710 INFO    SenderThread:14144 [sender.py:send_exit():606] send defer
+2023-06-04 19:38:11,710 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: poll_exit
+2023-06-04 19:38:11,712 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:11,712 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 0
+2023-06-04 19:38:11,713 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:11,713 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-06-04 19:38:11,714 INFO    SenderThread:14144 [sender.py:transition_state():626] send defer: 1
+2023-06-04 19:38:11,714 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:11,714 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 1
+2023-06-04 19:38:11,715 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:11,715 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-06-04 19:38:11,716 INFO    SenderThread:14144 [sender.py:transition_state():626] send defer: 2
+2023-06-04 19:38:11,717 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:11,717 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 2
+2023-06-04 19:38:11,717 INFO    HandlerThread:14144 [system_monitor.py:finish():190] Stopping system monitor
+2023-06-04 19:38:11,717 DEBUG   SystemMonitor:14144 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-06-04 19:38:11,719 DEBUG   SystemMonitor:14144 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-06-04 19:38:11,719 INFO    HandlerThread:14144 [interfaces.py:finish():202] Joined cpu monitor
+2023-06-04 19:38:11,719 DEBUG   SystemMonitor:14144 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-06-04 19:38:11,720 INFO    HandlerThread:14144 [interfaces.py:finish():202] Joined disk monitor
+2023-06-04 19:38:11,722 INFO    HandlerThread:14144 [interfaces.py:finish():202] Joined memory monitor
+2023-06-04 19:38:11,722 INFO    HandlerThread:14144 [interfaces.py:finish():202] Joined network monitor
+2023-06-04 19:38:11,724 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:11,724 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-06-04 19:38:11,724 INFO    SenderThread:14144 [sender.py:transition_state():626] send defer: 3
+2023-06-04 19:38:11,725 DEBUG   SenderThread:14144 [sender.py:send():375] send: stats
+2023-06-04 19:38:11,726 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:11,726 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 3
+2023-06-04 19:38:11,726 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:11,728 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-06-04 19:38:11,728 INFO    SenderThread:14144 [sender.py:transition_state():626] send defer: 4
+2023-06-04 19:38:11,728 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:11,729 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 4
+2023-06-04 19:38:11,730 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:11,730 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-06-04 19:38:11,730 INFO    SenderThread:14144 [sender.py:transition_state():626] send defer: 5
+2023-06-04 19:38:11,730 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:11,731 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 5
+2023-06-04 19:38:11,732 DEBUG   SenderThread:14144 [sender.py:send():375] send: summary
+2023-06-04 19:38:11,736 INFO    SenderThread:14144 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-04 19:38:11,737 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:11,737 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-06-04 19:38:11,738 INFO    SenderThread:14144 [sender.py:transition_state():626] send defer: 6
+2023-06-04 19:38:11,738 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:11,738 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 6
+2023-06-04 19:38:11,739 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:11,740 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-06-04 19:38:11,750 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: status_report
+2023-06-04 19:38:12,053 INFO    SenderThread:14144 [sender.py:transition_state():626] send defer: 7
+2023-06-04 19:38:12,054 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:12,054 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 7
+2023-06-04 19:38:12,054 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:12,054 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-06-04 19:38:12,188 INFO    Thread-16 :14144 [dir_watcher.py:_on_file_modified():295] file/dir modified: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\wandb-summary.json
+2023-06-04 19:38:12,189 INFO    Thread-16 :14144 [dir_watcher.py:_on_file_modified():295] file/dir modified: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\config.yaml
+2023-06-04 19:38:12,221 INFO    SenderThread:14144 [sender.py:transition_state():626] send defer: 8
+2023-06-04 19:38:12,222 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:12,223 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 8
+2023-06-04 19:38:12,224 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:12,224 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-06-04 19:38:12,224 INFO    SenderThread:14144 [sender.py:transition_state():626] send defer: 9
+2023-06-04 19:38:12,224 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:12,226 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 9
+2023-06-04 19:38:12,227 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:12,227 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-06-04 19:38:12,227 INFO    SenderThread:14144 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-06-04 19:38:13,201 INFO    SenderThread:14144 [dir_watcher.py:_on_file_modified():295] file/dir modified: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\output.log
+2023-06-04 19:38:13,201 INFO    SenderThread:14144 [dir_watcher.py:finish():395] scan: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files
+2023-06-04 19:38:13,202 INFO    SenderThread:14144 [dir_watcher.py:finish():409] scan save: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\conda-environment.yaml conda-environment.yaml
+2023-06-04 19:38:13,202 INFO    SenderThread:14144 [dir_watcher.py:finish():409] scan save: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\config.yaml config.yaml
+2023-06-04 19:38:13,204 INFO    SenderThread:14144 [dir_watcher.py:finish():409] scan save: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\output.log output.log
+2023-06-04 19:38:13,205 INFO    SenderThread:14144 [dir_watcher.py:finish():409] scan save: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\requirements.txt requirements.txt
+2023-06-04 19:38:13,212 INFO    SenderThread:14144 [dir_watcher.py:finish():409] scan save: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\wandb-metadata.json wandb-metadata.json
+2023-06-04 19:38:13,213 INFO    SenderThread:14144 [dir_watcher.py:finish():409] scan save: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\wandb-summary.json wandb-summary.json
+2023-06-04 19:38:13,216 INFO    SenderThread:14144 [sender.py:transition_state():626] send defer: 10
+2023-06-04 19:38:13,216 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:13,216 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 10
+2023-06-04 19:38:13,216 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:13,216 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-06-04 19:38:13,216 INFO    SenderThread:14144 [file_pusher.py:finish():167] shutting down file pusher
+2023-06-04 19:38:13,666 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-04 19:38:13,906 INFO    wandb-upload_1:14144 [upload_job.py:push():137] Uploaded file D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\config.yaml
+2023-06-04 19:38:13,918 INFO    wandb-upload_4:14144 [upload_job.py:push():137] Uploaded file D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\wandb-summary.json
+2023-06-04 19:38:13,933 INFO    wandb-upload_3:14144 [upload_job.py:push():137] Uploaded file D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\requirements.txt
+2023-06-04 19:38:13,970 INFO    wandb-upload_0:14144 [upload_job.py:push():137] Uploaded file D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\conda-environment.yaml
+2023-06-04 19:38:14,014 INFO    wandb-upload_2:14144 [upload_job.py:push():137] Uploaded file D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\files\output.log
+2023-06-04 19:38:14,227 INFO    Thread-15 :14144 [sender.py:transition_state():626] send defer: 11
+2023-06-04 19:38:14,228 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:14,229 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 11
+2023-06-04 19:38:14,229 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:14,230 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-06-04 19:38:14,230 INFO    SenderThread:14144 [file_pusher.py:join():172] waiting for file pusher
+2023-06-04 19:38:14,230 INFO    SenderThread:14144 [sender.py:transition_state():626] send defer: 12
+2023-06-04 19:38:14,231 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:14,231 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 12
+2023-06-04 19:38:14,232 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:14,232 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-06-04 19:38:14,715 INFO    SenderThread:14144 [sender.py:transition_state():626] send defer: 13
+2023-06-04 19:38:14,715 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:14,716 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 13
+2023-06-04 19:38:14,717 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:14,717 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-06-04 19:38:14,718 INFO    SenderThread:14144 [sender.py:transition_state():626] send defer: 14
+2023-06-04 19:38:14,718 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: defer
+2023-06-04 19:38:14,719 INFO    HandlerThread:14144 [handler.py:handle_request_defer():170] handle defer: 14
+2023-06-04 19:38:14,720 DEBUG   SenderThread:14144 [sender.py:send():375] send: final
+2023-06-04 19:38:14,721 DEBUG   SenderThread:14144 [sender.py:send():375] send: footer
+2023-06-04 19:38:14,721 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: defer
+2023-06-04 19:38:14,721 INFO    SenderThread:14144 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-06-04 19:38:14,724 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: poll_exit
+2023-06-04 19:38:14,724 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: server_info
+2023-06-04 19:38:14,725 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: get_summary
+2023-06-04 19:38:14,726 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: poll_exit
+2023-06-04 19:38:14,727 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: sampled_history
+2023-06-04 19:38:14,728 DEBUG   SenderThread:14144 [sender.py:send_request():402] send_request: server_info
+2023-06-04 19:38:14,964 DEBUG   HandlerThread:14144 [handler.py:handle_request():144] handle_request: shutdown
+2023-06-04 19:38:14,964 INFO    HandlerThread:14144 [handler.py:finish():842] shutting down handler
+2023-06-04 19:38:15,738 INFO    WriterThread:14144 [datastore.py:close():298] close: D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\wandb\run-20230604_193758-ztfhojjp\run-ztfhojjp.wandb
+2023-06-04 19:38:15,970 INFO    SenderThread:14144 [sender.py:finish():1550] shutting down sender
+2023-06-04 19:38:15,971 INFO    SenderThread:14144 [file_pusher.py:finish():167] shutting down file pusher
+2023-06-04 19:38:15,971 INFO    SenderThread:14144 [file_pusher.py:join():172] waiting for file pusher

@@ -51,11 +51,17 @@ def run_train(
 
     mse = mean_squared_error(y_val, y_pred, squared=False)
     # TODO: Log `mse` to Weights & Biases under the key `"MSE"`
+    #https://docs.wandb.ai/ref/python/log#docusaurus_skipToContent_fallback
+    wandb.log({"MSE": mse})
 
     with open("regressor.pkl", "wb") as f:
         pickle.dump(rf, f)
 
-    # TODO: Log `regressor.pkl` as an artifact of type `model`
+    # TODO: Log `regressor.pkl` as an artifact of type `model`  
+    #https://docs.wandb.ai/guides/artifacts/track-external-files
+    model_artifact = wandb.Artifact('regressor.pkl', type='model')
+    model_artifact.add_file("regressor.pkl")
+    wandb.log_artifact(model_artifact)
 
 
 if __name__ == "__main__":

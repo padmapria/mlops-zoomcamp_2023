@@ -1,0 +1,49 @@
+{
+    "os": "Windows-10-10.0.22621-SP0",
+    "python": "3.9.16",
+    "heartbeatAt": "2023-06-04T11:37:06.398788",
+    "startedAt": "2023-06-04T11:37:05.474565",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--wandb_project",
+        "experiment_tracking_2",
+        "--wandb_entity",
+        "deepika3-deepika3",
+        "--data_artifact",
+        "deepika3-deepika3/experiment_tracking_2/NYC-Taxi:v0"
+    ],
+    "state": "running",
+    "program": "D:\\z_ML\\mlops_zoom_practice\\02-experiment-tracking\\homework-wandb\\sweep.py",
+    "codePath": "02-experiment-tracking\\homework-wandb\\sweep.py",
+    "git": {
+        "remote": "https://github.com/padmapria/mlops-zoomcamp_2023.git",
+        "commit": "fe50d152667add809e9edd6e3797aafb04953287"
+    },
+    "email": "deepika3.deepika3@gmail.com",
+    "root": "D:/z_ML/mlops_zoom_practice",
+    "host": "Padmapriya_sri",
+    "username": "padma",
+    "executable": "C:\\Users\\padma\\anaconda3\\python.exe",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 2496.0,
+        "min": 0.0,
+        "max": 2496.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2496.0,
+            "min": 0.0,
+            "max": 2496.0
+        }
+    ],
+    "disk": {
+        "total": 488.28124618530273,
+        "used": 44.48556900024414
+    },
+    "memory": {
+        "total": 31.727603912353516
+    }
+}

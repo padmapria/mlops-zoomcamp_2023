@@ -1,0 +1,4 @@
+name: ml_deployment
+channels:
+  - defaults
+prefix: C:\Users\padma\anaconda3\envs\ml_deployment

@@ -1,0 +1,42 @@
+[34m[1mwandb[39m[22m: [32m[41mERROR[39m[49m Project deepika3-deepika3/ experiment_tracking_2 does not contain artifact: "NYC-Taxi:v0"
+Traceback (most recent call last):
+  File "C:\Users\padma\anaconda3\lib\site-packages\wandb\apis\normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\padma\anaconda3\lib\site-packages\wandb\apis\public.py", line 958, in artifact
+    artifact = Artifact(self.client, entity, project, artifact_name)
+  File "C:\Users\padma\anaconda3\lib\site-packages\wandb\apis\public.py", line 4356, in __init__
+    self._load()
+  File "C:\Users\padma\anaconda3\lib\site-packages\wandb\apis\public.py", line 5077, in _load
+    raise ValueError(
+ValueError: Project deepika3-deepika3/ experiment_tracking_2 does not contain artifact: "NYC-Taxi:v0"
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\train.py", line 68, in <module>
+    run_train()
+  File "C:\Users\padma\anaconda3\lib\site-packages\click\core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\padma\anaconda3\lib\site-packages\click\core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\padma\anaconda3\lib\site-packages\click\core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\padma\anaconda3\lib\site-packages\click\core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "D:\z_ML\mlops_zoom_practice\02-experiment-tracking\homework-wandb\train.py", line 41, in run_train
+    artifact = wandb.use_artifact(data_artifact, type="preprocessed_dataset")
+  File "C:\Users\padma\anaconda3\lib\site-packages\wandb\sdk\wandb_run.py", line 345, in wrapper_fn
+    return func(self, *args, **kwargs)
+  File "C:\Users\padma\anaconda3\lib\site-packages\wandb\sdk\wandb_run.py", line 335, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\padma\anaconda3\lib\site-packages\wandb\sdk\wandb_run.py", line 2676, in use_artifact
+    artifact = public_api.artifact(type=type, name=name)
+  File "C:\Users\padma\anaconda3\lib\site-packages\wandb\apis\normalize.py", line 87, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "C:\Users\padma\anaconda3\lib\site-packages\wandb\apis\normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\padma\anaconda3\lib\site-packages\wandb\apis\public.py", line 958, in artifact
+    artifact = Artifact(self.client, entity, project, artifact_name)
+  File "C:\Users\padma\anaconda3\lib\site-packages\wandb\apis\public.py", line 4356, in __init__
+    self._load()
+  File "C:\Users\padma\anaconda3\lib\site-packages\wandb\apis\public.py", line 5077, in _load
+    raise ValueError(
+wandb.errors.CommError: Project deepika3-deepika3/ experiment_tracking_2 does not contain artifact: "NYC-Taxi:v0"

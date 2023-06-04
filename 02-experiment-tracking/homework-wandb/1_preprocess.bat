@@ -1,0 +1,1 @@
+python preprocess_data.py --wandb_project experiment_tracking_2 --wandb_entity deepika3-deepika3 --raw_data_path data --dest_path ./output
