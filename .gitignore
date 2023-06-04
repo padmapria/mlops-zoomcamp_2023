@@ -8,6 +8,7 @@ data/
 *.html
 *.csv
 *.log
+~/.log/
 
 .venv
 venv
