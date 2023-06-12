@@ -1,0 +1,47 @@
+In this assignment we are using mlflow as tracking server and prefect for orchestration
+
+1) Launch the tracking server locally for MLflow
+start the mlflow ui from a new terminal using the below code(we store all the mlflow metadta and artifacts in mlflow.db)
+
+cd to homework folder new terminal
+https://mlflow.org/docs/latest/tracking.html#tracking-ui
+mlflow ui --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlflow-artifacts --host 0.0.0.0
+
+To run in local
+------------------
+prefect orion start
+
+
+WAy1 :: we could use Prefect's Cloud service at https://beta.prefect.io which provides token login in addition to all other Prefect features.
+-------------------------------------------------
+prefect cloud login -k <paste-key>
+
+To deploy
+----------
+python prefect_deploy.py
+python prefect_deploy_w_markdown_artifact.py
+
+To start the custom run we have to start the agent pool from command line
+---------------------------------------------------------------
+prefect agent start --pool default-agent-pool
+
+
+way2 host prefect in AWS cloud VM
+--------------------------------------------
+To run in ec2
+---------------
+edit inbound rulese for ec2
+----------------------------------
+HTTP anywhere
+custom tcp 4200 anywhere
+custom udp 4200 anywhere
+HTTPs anywhere
+
+Hosting a Remote Orion instance on a cloud VM
+https://gist.github.com/Qfl3x/8dd69b8173f027b9468016c118f3b6a5
+https://discourse.prefect.io/t/hosting-a-remote-orion-instance-on-a-cloud-vm/967
+
+pip install prefect==2.0b5
+prefect config set PREFECT_UI_API_URL="http://<external-ip-from-aws>:4200/api"
+
+WE can run prefect server in the AWS cloud instead 
