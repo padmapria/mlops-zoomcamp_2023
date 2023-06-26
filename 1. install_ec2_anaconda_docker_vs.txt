@@ -1,9 +1,16 @@
 https://github.com/DataTalksClub/mlops-zoomcamp/tree/main/01-intro
 
-Install anaconda
-----
+Install anaconda using the below wget command
+------------------------------------------------
 wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh
-savig to <somepath>
+ubuntu@ip-172-31-28-129:~$ wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh
+--2023-06-26 04:58:53--  https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh
+Resolving repo.anaconda.com (repo.anaconda.com)... 104.16.131.3, 104.16.130.3, 2606:4700::6810:8203, ...
+Connecting to repo.anaconda.com (repo.anaconda.com)|104.16.131.3|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 902411137 (861M) [application/x-sh]
+Saving to: ‘Anaconda3-2023.03-1-Linux-x86_64.sh’
+-
 bash <saving to path>
 acpt licence
 
@@ -17,10 +24,13 @@ nano .bashrc
 Include the below line in .bashrc in the end
 ------------------------ 
 export PATH="${HOME}/soft:${PATH}"
+save the file .bashrc file
+
+run the below commnd
+--------------------------
 source .bashrc
 
 cd soft
-
 Install docker
 -----
 sudo apt install docker.io
@@ -29,7 +39,6 @@ Install docker compose
 -----------
 wget https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-linux-x86_64 -O docker-compose
 chmod +x docker-compose
-
 
 Test docker
 -----------
@@ -55,6 +64,20 @@ cd mlops-zoomcamp
 in visual studio code of local computer
 ----------------------------------
 Install remote-ssh , to use mlops-zoomcamp from local computer
+
+In our windows computer go to the path C:\Users\padma\.ssh
+------------------------------------------------------------
+create a file called config
+# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+Host mlopzoomcamp
+    HostName <AWS publicIP4 address>
+    User ubuntu
+    IdentityFile <full path to ourawskey alog with .pen extension>
+    StrictHostKeyChecking no
+    
+Now the visual studio will try to connct to our ec2
+select the Os --> linux in the visual studio
+select the project folder
 
 in visualstudio, next to the terminal tab below, there is a tab called ports in it include below
 --------------------------------------------------------------------------------
