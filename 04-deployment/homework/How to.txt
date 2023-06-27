@@ -22,3 +22,17 @@ pipenv shell activates the environment.
 Note: Dev packages in pipenv: Sometimes we want to add certain packages but only in the current environment without writing them to the production environment such as testing packages. We use pipenv install --dev <packagename> instead of pipenv install.
 
 This creates two files in our directory: Pipfile and Pipfile.lock. For information on what these files do read this. In short Pipfile stores the versions of the packages that we want (like scikit-learn, Flask) and Pipfile.lock stores the dependency tree to avoid for example updating Numpy for scikit-learn and breaking Flask in the process.
+
+Q5.Parametrize the script , pass the year and month configurable via CLI
+python starter.py 2022 3
+
+Q6.To package the script in docker container
+---------------------------------------------
+In the DockerFile pull the below base image provided
+
+FROM svizor/zoomcamp-model:mlops-3.10.0-slim
+
+Then build and run the docker image
+--------------------------
+docker build -t homework .
+docker run -it homework python starter.py 2022 4

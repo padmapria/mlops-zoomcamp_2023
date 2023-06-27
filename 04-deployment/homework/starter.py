@@ -3,7 +3,6 @@
 
 import pickle,os
 import pandas as pd
-
 import sys
 
 #To pass year and month values via cli
