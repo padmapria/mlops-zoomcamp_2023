@@ -99,7 +99,7 @@ jupyter notebook
 
 use the url  to open jupyter notebook in the browser
 
-packagess needed
+packages needed
 ----------------------
 !pip install pyarrow
 df = pd.read_parquet('./data/<foldername>)
