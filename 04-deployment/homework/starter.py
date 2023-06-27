@@ -84,3 +84,11 @@ df_result.to_parquet(
     compression=None,
     index=False
 )
+
+##upload file to s3
+import boto3
+
+s3_client = boto3.client('s3')
+bucket_name = 'mlops_data_priya'
+# Upload the file to S3
+s3_client.upload_file(output_file, bucket_name, output_file)

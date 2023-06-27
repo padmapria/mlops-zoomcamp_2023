@@ -36,3 +36,10 @@ Then build and run the docker image
 --------------------------
 docker build -t homework .
 docker run -it homework python starter.py 2022 4
+
+To push data to s3
+-------------------
+docker run -it -e AWS_ACCESS_KEY_ID=<your_access_key> \
+              -e AWS_SECRET_ACCESS_KEY=<your_secret_key> \
+              -e AWS_DEFAULT_REGION=<your_region> \
+              homework python starter.py 2022 4
