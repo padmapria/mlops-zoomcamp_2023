@@ -1,0 +1,28 @@
+Here's a summary of the technologies and tools used in different steps of the course:
+
+1. MLflow:
+	Used for experiment tracking, model packaging, and deployment.
+	Tracks model parameters, evaluation metrics, and artifacts.
+	Enables reproducibility and collaboration in the machine learning workflow.
+
+2. Prefect
+	Used for task orchestration and workflow management.
+	Handles dependencies, parallel execution, and fault tolerance.
+	Allows for efficient and reliable execution of tasks in the defined workflow.
+
+3. Docker:
+	Used for containerization and creating reproducible environments.
+	Helps package the application and its dependencies into a container for easy deployment and scalability.
+	
+	Flask API:
+	Used for deploying the machine learning model as a RESTful API.
+	Provides a web server framework to serve model predictions over HTTP.
+	
+4. Evidently:
+	Used for monitoring data and model drift.
+	Calculates various metrics to assess the drift in datasets and model predictions.
+	Provides insights into data quality and model performance over time.
+	
+Overall, the project combines these technologies to create an end-to-end machine learning pipeline. MLflow tracks and manages experiments and models, Prefect orchestrates the tasks, Docker provides containerization for deployment, Flask API serves the model predictions, and Evidently monitors data and model drift.
+
+Each tool serves a specific purpose within the workflow, contributing to experiment tracking, orchestration, deployment, and monitoring aspects of the machine learning project.

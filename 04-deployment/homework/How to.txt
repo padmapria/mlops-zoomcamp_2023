@@ -43,3 +43,18 @@ docker run -it -e AWS_ACCESS_KEY_ID=<your_access_key> \
               -e AWS_SECRET_ACCESS_KEY=<your_secret_key> \
               -e AWS_DEFAULT_REGION=<your_region> \
               homework python starter.py 2022 4
+
+The use of Pipenv provides the following benefits:
+------------------------------------------------------
+
+Dependency Management: Pipenv allows you to specify project dependencies in a "Pipfile" and "Pipfile.lock" file. It tracks the exact versions of the packages required for your project, ensuring consistent and reproducible builds.
+
+Virtual Environments: Pipenv automatically creates a virtual environment specific to your project. This isolates your project's dependencies from the system-wide Python installation and other projects, preventing conflicts and ensuring a clean and controlled environment for development.
+
+Simplified Workflow: Pipenv simplifies the workflow by combining package installation and virtual environment management into a single tool. It automatically manages the virtual environment and installs the required packages with the correct versions.
+
+Environment Reproducibility: By using Pipenv, you can easily recreate the exact environment used for development, testing, or production. The "Pipfile.lock" file ensures that the same versions of packages are installed consistently across different environments.
+
+Collaboration: Pipenv provides a straightforward way to share your project with others. The "Pipfile" and "Pipfile.lock" files contain all the necessary information to recreate the environment, making it easier for collaborators to set up and work on the project.
+
+While Conda is a popular choice for managing environments and dependencies in machine learning projects, Pipenv offers a lightweight and Python-specific alternative with similar functionality. It is particularly useful for projects that primarily rely on Python packages and do not require the additional features provided by Conda.

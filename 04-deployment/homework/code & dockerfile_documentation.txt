@@ -1,0 +1,84 @@
+Code Documentation: starter.py
+------------------------------------
+This script processes input data and makes predictions using a pre-trained model. The predicted results are saved to an output file and uploaded to an S3 bucket.
+
+Dependencies:
+- pandas: Library for data manipulation and analysis.
+- numpy: Library for numerical computing.
+- boto3: AWS SDK for Python.
+- pickle: Serialization library for Python objects.
+
+Command-line Arguments:
+- year: The year of the input data.
+- month: The month of the input data.
+
+Functionality:
+1. Command-line Argument Validation:
+   - Validates the command-line arguments. Expects two arguments: year and month. Prints an error message if the number of arguments is incorrect.
+
+2. Data Loading and Preprocessing:
+   - Reads the input data from a Parquet file specified by the year and month.
+   - Performs data preprocessing steps, including calculating the duration and converting categorical columns to string type.
+   - Creates a ride_id column based on the year, month, and row index.
+
+3. Model Loading:
+   - Loads a pre-trained model from the "model.bin" file using the pickle library. or we can load from mlflow model registry, use the neccessary code. 
+   - The loaded model consists of a DictVectorizer (dv) and a model object.
+
+4. Prediction:
+   - Uses the loaded model to make predictions on the preprocessed input data.
+   - Transforms the categorical features using the DictVectorizer (dv) and applies the model's predict function.
+   - Calculates the mean and standard deviation of the predicted durations.
+
+5. Output Preparation:
+   - Prepares the output DataFrame consisting of the ride_id column and the predicted durations (predictions).
+   - Writes the output DataFrame to an output file in Parquet format, using the specified directory path, year, and month.
+   - The output file is saved in the "output/{taxi_type}/{year}-{month}.parquet" format.
+
+6. S3 Upload:
+   - Initializes the Boto3 S3 client.
+   - Specifies the S3 bucket name for uploading the output file.
+   - Uploads the output file to the specified S3 bucket.
+
+Usage Example:
+$ python starter.py 2022 2
+
+Note: Ensure that the required dependencies are installed before running the script.
+
+
+Dockerfile Documentation
+----------------------------
+This Dockerfile sets up the environment required to run the "starter.py" script by installing dependencies and copying the necessary files.
+
+Base Image:
+- svizor/zoomcamp-model:mlops-3.10.0-slim
+
+Instructions:
+1. Updating Pip:
+   - Runs the command "pip install -U pip" to update the pip package manager.
+
+2. Installing pipenv:
+   - Runs the command "pip install pipenv" to install the pipenv package, which is used for managing Python dependencies.
+
+3. Setting Working Directory:
+   - Sets the working directory to "/app" using the command "WORKDIR /app".
+
+4. Copying Dependency Files:
+   - Copies the "Pipfile", "Pipfile.lock", and "requirements.txt" files from the local machine to the "/app" directory in the container.
+
+5. Installing Dependencies:
+   - Runs the command "pipenv install --system --deploy" to install the dependencies specified in the "Pipfile.lock" file.
+   - Runs the command "pip install --no-cache-dir -r requirements.txt" to install additional dependencies specified in the "requirements.txt" file.
+
+6. Copying Source Code:
+   - Copies the "starter.py" file from the local machine to the "/app" directory in the container.
+
+Usage Example:
+1. Build the Docker image:
+   $ docker build -t myimage .
+
+2. Run a Docker container:
+   $ docker run -it myimage
+
+Note: Replace "myimage" with the desired image name.
+

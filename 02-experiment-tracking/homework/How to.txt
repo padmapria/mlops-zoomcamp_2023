@@ -11,14 +11,14 @@ python train.py
 4) Launch the tracking server locally for MLflow
 start the mlflow ui from a new terminal using the below code(we store all the mlflow metadta and artifacts in mlflow.db)
 
-cd to homework folder new terminal
+cd to homework folder from a new terminal
 https://mlflow.org/docs/latest/tracking.html#tracking-ui
 mlflow ui --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlflow-artifacts --host 0.0.0.0
 
-5) Tune model hyperparameters
+5) Tune model hyperparameters using Optuna and MLflow
 python hpo.py
 
-6) Promote the best model to the model registry
+6) Promote the best model to the MLFlow model registry
 python register_model.py
 
 Things to note

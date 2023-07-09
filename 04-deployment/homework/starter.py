@@ -18,9 +18,20 @@ else:
 #month = 2
 taxi_type = 'yellow'
 
-# Load the model file
+# Load the standalone model file
 with open('model.bin', 'rb') as f_in:
     dv, model = pickle.load(f_in)
+    
+def load_model_from_registry():
+    #To load the model from mlflow model registry
+    import mlflow
+
+    # Fetch the model URI from the MLflow Model Registry
+    model_uri = "models:/<model_name>/<model_stage>"
+
+    # Load the model from the MLflow Model Registry
+    model = mlflow.pyfunc.load_model(model_uri)
+
 
 # Read the input file
 categorical = ['PULocationID', 'DOLocationID']

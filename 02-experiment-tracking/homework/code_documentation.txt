@@ -1,0 +1,44 @@
+Here's a step-by-step explanation of each file and its purpose:
+------------------------------------------------------------------
+**preprocess_data.py:**
+----------------------------
+1. `dump_pickle(obj, filename)`: Function to dump an object into a pickle file.
+2. `read_dataframe(filename)`: Function to read a Parquet file into a pandas DataFrame and preprocess the data.
+3. `preprocess(df, dv, fit_dv)`: Function to preprocess the DataFrame by creating additional features and transforming the data using a DictVectorizer.
+4. `run_data_prep(raw_data_path, dest_path, dataset)`: Main function that reads the raw data, preprocesses it, and saves the preprocessed data and DictVectorizer object.
+
+Explanation:
+- The `preprocess_data.py` script is responsible for preprocessing the raw data before model training.
+- The `dump_pickle` function is used to serialize and save objects into pickle files.
+- The `read_dataframe` function reads a Parquet file into a pandas DataFrame and performs preprocessing steps such as data cleaning and feature engineering.
+- The `preprocess` function further processes the DataFrame by creating additional features and transforming the data using a DictVectorizer. The `fit_dv` parameter indicates whether to fit the DictVectorizer or use a pre-trained one.
+- The `run_data_prep` function serves as the entry point for the script. It reads the raw data from a specified location, preprocesses it using the helper functions, and saves the preprocessed data and DictVectorizer object for later use.
+
+**hpo.py:**
+----------
+1. `load_pickle(filename)`: Function to load a pickle file.
+2. `run_optimization(data_path, num_trials)`: Main function that performs hyperparameter optimization using Optuna and MLflow. It trains a random forest regressor with different hyperparameters and logs the results in MLflow.
+
+Explanation:
+- The `hpo.py` script focuses on hyperparameter optimization using Optuna and MLflow.
+- The `load_pickle` function is used to load a pickle file containing preprocessed data.
+- The `run_optimization` function is the main entry point for hyperparameter optimization. It defines the objective function for optimization, which trains a random forest regressor with different hyperparameters, evaluates its performance using RMSE, and logs the results in MLflow. The number of trials (hyperparameter evaluations) is controlled by the `num_trials` parameter.
+
+
+**register_model.py:**
+------------------------
+1. `load_pickle(filename)`: Function to load a pickle file.
+2. `train_and_log_model(data_path, params)`: Function to train a random forest regressor with given parameters and log the evaluation metrics in MLflow.
+3. `run_register_model(data_path, top_n)`: Main function that retrieves the top N model runs from the hyperparameter optimization experiment, evaluates the models on the validation and test sets, selects the best model based on the lowest test RMSE, and registers it in MLflow.
+
+Explanation:
+- The `register_model.py` script handles the model registration process.
+- The `load_pickle` function is used to load a pickle file containing preprocessed data.
+- The `train_and_log_model` function trains a random forest regressor with given parameters, evaluates its performance on the validation and test sets, and logs the evaluation metrics in MLflow.
+- The `run_register_model` function serves as the entry point for model registration. It retrieves the top N model runs from the hyperparameter optimization experiment based on the lowest test RMSE, evaluates each model, and registers the best model in MLflow for future reference.
+
+Notes:
+------
+1. Throughout the code snippets, MLflow is used for experiment tracking, logging hyperparameters, evaluation metrics, and artifacts. It provides a centralized platform for managing and tracking experiments, enabling reproducibility, collaboration, and model versioning. MLflow allows you to track the entire machine learning workflow, from data preprocessing to model training and evaluation.
+
+The flow to call each Python file is given in the How to.txt:
