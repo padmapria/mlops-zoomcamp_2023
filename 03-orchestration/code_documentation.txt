@@ -1,0 +1,118 @@
+Code Description of prefect_deploy_w_markdown_artifact.py:
+-------------------------------------------------------------
+The code leverages Prefect's task and flow decorators to define and orchestrate a machine learning pipeline, allowing for easier management and monitoring of the tasks involved in the workflow. It reads and preprocesses data from parquet files, adds features, trains an XGBoost model, and generates a Markdown artifact showcasing the model's performance.
+
+Libraries Used:
+---------------
+- pathlib
+- pickle
+- pandas
+- numpy
+- scipy
+- sklearn
+- DictVectorizer from sklearn.feature_extraction
+- mean_squared_error from sklearn.metrics
+- mlflow
+- xgboost
+- flow, task, and artifacts from Prefect
+- create_markdown_artifact from prefect.artifacts
+
+
+Whats the use of mlflow in this project
+------------------------------------------
+MLflow is used in the code to track and log important information during the machine learning experiment, including model parameters, evaluation metrics, and artifacts such as the trained model and the DictVectorizer object.
+
+whats the use of prefect decorators
+-------------------------------------
+Tasks Decorators:
+------------------
+1. @task(retries=3, retry_delay_seconds=2):
+	Marks a function as a Prefect task.
+	Specifies the maximum number of times the task can be retried on failure using the retries argument.
+	Sets the delay between retries in seconds using the retry_delay_seconds argument.
+	Used for the read_data task, which reads and preprocesses data from parquet files.
+	
+2. @task:
+	Marks a function as a Prefect task.
+	Used for tasks that don't require retries or special configurations.
+	Used for tasks such as add_features, create_rmse_artifact, and others in the code.
+	
+3. @task(log_prints=True):
+
+	Marks a function as a Prefect task.
+	Enables logging of task outputs during execution using MLflow with log_prints=True.
+	Used for the train_best_model task to log relevant information during model training.
+	
+Flow Decorators:
+------------------
+@flow:
+	Marks a function as a Prefect flow.
+	Defines the main workflow and serves as the entry point for execution.
+	The main_flow_w_artifact function is decorated with @flow and combines the defined tasks into a flow.
+	
+	NOTE: Multiple flows can be defined in the same file.
+	In the code, it represents the main training pipeline and orchestrates the execution of the tasks.
+	
+	Additional Information:
+	------------------------
+	i) The SequentialTaskRunner() is a task runner provided by Prefect. By using task_runner=SequentialTaskRunner() in the @flow decorator, you force sequential execution of tasks in the flow. 
+	ii) This ensures that tasks are executed in the order they are defined, even if they don't have explicit dependencies. This is useful when you want to ensure a specific order of task execution or when you need to handle dependencies that are not captured implicitly.
+	
+	from prefect import flow, task
+	from prefect.task_runners import SequentialTaskRunner
+	@flow(task_runner=SequentialTaskRunner())
+	def main():
+	  ... is this correct
+  
+	Overall, the code leverages Prefect's task and flow decorators to define and orchestrate a machine learning pipeline, allowing for easier management and monitoring of the tasks involved in the workflow.
+
+
+Functions and Tasks:
+--------------------
+1. read_data(filename: str) -> pd.DataFrame:
+    - Reads data from parquet files into a DataFrame.
+    - Performs preprocessing on the data, including converting datetime columns, calculating the duration, and filtering based on constraints.
+    - Returns the preprocessed DataFrame.
+
+2. add_features(df_train: pd.DataFrame, df_val: pd.DataFrame) -> tuple:
+    - Adds features to the model.
+    - Combines "PULocationID" and "DOLocationID" columns to create a new feature "PU_DO".
+    - Converts categorical and numerical features into a sparse matrix using DictVectorizer.
+    - Returns transformed features, target variables, and the DictVectorizer object.
+
+3. train_best_model(X_train: scipy.sparse._csr.csr_matrix, X_val: scipy.sparse._csr.csr_matrix, y_train: np.ndarray, y_val: np.ndarray, dv: sklearn.feature_extraction.DictVectorizer) -> None:
+    - Trains an XGBoost model with the best hyperparameters.
+    - Uses the transformed features and target variables.
+    - Logs model parameters and evaluation metrics using MLflow.
+    - Saves the DictVectorizer object and the trained model as artifacts.
+
+4. create_rmse_artifact(rmse: float) -> None:
+    - Creates a Markdown artifact displaying the validation RMSE value.
+    - Receives the RMSE value and generates a formatted Markdown artifact.
+
+5. main_flow_w_artifact(train_path: str = "./data/green_tripdata_2023-02.parquet", val_path: str = "./data/green_tripdata_2023-03.parquet") -> None:
+    - The main training pipeline.
+    - Sets up MLflow configurations.
+    - Loads and preprocesses the data.
+    - Adds features to the data.
+    - Trains the model and creates the RMSE artifact.
+
+6. deploy():
+    - Builds a Prefect deployment from the main_flow_w_artifact flow.
+    - Applies the deployment to make the flow ready for execution.
+
+Flow Execution Steps:
+---------------------
+1. Reads and preprocesses the data from parquet files using the `read_data` task.
+2. Adds features to the preprocessed data using the `add_features` task.
+3. Trains an XGBoost model using the transformed features and target variables with the `train_best_model` task.
+4. Logs model parameters and evaluation metrics using MLflow within the `train_best_model` task.
+5. Saves the DictVectorizer object and the trained model as artifacts within the `train_best_model` task.
+6. Creates a Markdown artifact displaying the validation RMSE value with the `create_rmse_artifact` task.
+7. Sets up MLflow configurations, loads and preprocesses the data, adds features, trains the model, and creates the RMSE artifact within the `main_flow_w_artifact` flow.
+8. Builds a Prefect deployment from the `main_flow_w_artifact` flow within the `deploy` function.
+9. Applies the deployment to make the flow ready for execution within the `deploy` function.
+
+Note: 
+-----
+Make sure to install the required libraries before running the code.
