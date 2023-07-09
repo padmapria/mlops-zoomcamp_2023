@@ -18,12 +18,19 @@ Libraries Used:
 - create_markdown_artifact from prefect.artifacts
 
 
-Whats the use of mlflow in this project
-------------------------------------------
-MLflow is used in the code to track and log important information during the machine learning experiment, including model parameters, evaluation metrics, and artifacts such as the trained model and the DictVectorizer object.
+use of mlflow in this project
+------------------------------
+- MLflow is used in the code for tracking and logging various aspects of the machine learning experiment. 
+- It is integrated within the train_best_model task to log model parameters, evaluation metrics, and artifacts. 
+- MLflow is used to track the best model's performance and store the trained model and DictVectorizer object as artifacts.
 
-whats the use of prefect decorators
--------------------------------------
+use of prefect orchestration in this project
+---------------------------------------------
+Tasks such as read_data, add_features, train_best_model, and create_rmse_artifact are decorated with @task to mark them as Prefect tasks. These tasks represent individual units of work within the pipeline.
+
+The main_flow_w_artifact function is decorated with @flow to mark it as the main flow of the pipeline. It serves as the entry point for the workflow and combines the defined tasks into a cohesive pipeline.
+
+
 Tasks Decorators:
 ------------------
 1. @task(retries=3, retry_delay_seconds=2):
@@ -38,7 +45,6 @@ Tasks Decorators:
 	Used for tasks such as add_features, create_rmse_artifact, and others in the code.
 	
 3. @task(log_prints=True):
-
 	Marks a function as a Prefect task.
 	Enables logging of task outputs during execution using MLflow with log_prints=True.
 	Used for the train_best_model task to log relevant information during model training.
@@ -116,3 +122,9 @@ Flow Execution Steps:
 Note: 
 -----
 Make sure to install the required libraries before running the code.
+
+
+Advantages of using prefect
+-------------------------------
+By using Prefect orchestration, the code ensures the proper sequencing and coordination of tasks within the ML pipeline. It handles task dependencies, parallel execution, fault tolerance, and provides monitoring and logging capabilities. Prefect allows for the automation and management of the entire workflow, enabling efficient and reliable execution of the machine learning pipeline.
+
