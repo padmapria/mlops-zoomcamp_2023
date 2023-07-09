@@ -1,4 +1,6 @@
 cd to homework folder
+These scripts have to be executed sequentially in the given order. Each script performs a specific task in ML workflow, such as data preprocessing, hyperparameter optimization, and model registration. By running these scripts in sequence, you can preprocess the data, optimize the model's hyperparameters, and register the best model for future predictions/to pass to production environment.
+
 1)install the needed libraries
 pip install -r requirement.txt
 
