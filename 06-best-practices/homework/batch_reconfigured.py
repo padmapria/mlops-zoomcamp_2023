@@ -22,7 +22,7 @@ def read_data(input_file,categorical):
         }
     }
 
-    df = pd.read_parquet(os.path.basename(input_file).replace('s3://nyc-duration/', ''))
+    df = pd.read_parquet(os.path.basename(input_file).replace('s3://nyc-duration/in', ''))
     
     df['duration'] = df.tpep_dropoff_datetime - df.tpep_pickup_datetime
     df['duration'] = df.duration.dt.total_seconds() / 60

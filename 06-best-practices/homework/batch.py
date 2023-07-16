@@ -43,7 +43,6 @@ def main(year, month):
     
     df_result.to_parquet(output_file, engine='pyarrow', index=False)
 
-
     df_result = pd.DataFrame()
     df_result['ride_id'] = df['ride_id']
     df_result['predicted_duration'] = y_pred
