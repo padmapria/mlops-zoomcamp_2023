@@ -18,24 +18,20 @@ def read_data(filename,categorical):
     return df
 
 
-if __name__ == '__main__':
-    year = int(sys.argv[1])
-    month = int(sys.argv[2])
-
+def main(year, month):
     input_file = f'https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_{year:04d}-{month:02d}.parquet'
-    #output_file = f'output/yellow_tripdata_{year:04d}-{month:02d}.parquet'
     output_file = f'taxi_type=yellow_year={year:04d}_month={month:02d}.parquet'
-    
+
     categorical = ['PULocationID', 'DOLocationID']
-    
-    df = read_data(input_file,categorical)
+
+    df = read_data(input_file, categorical)
     df['ride_id'] = f'{year:04d}/{month:02d}_' + df.index.astype('str')
 
     dicts = df[categorical].to_dict(orient='records')
-    
+
     with open('model.bin', 'rb') as f_in:
         dv, lr = pickle.load(f_in)
-    
+
     X_val = dv.transform(dicts)
     y_pred = lr.predict(X_val)
 
@@ -44,5 +40,17 @@ if __name__ == '__main__':
     df_result = pd.DataFrame()
     df_result['ride_id'] = df['ride_id']
     df_result['predicted_duration'] = y_pred
-
+    
     df_result.to_parquet(output_file, engine='pyarrow', index=False)
+
+
+    df_result = pd.DataFrame()
+    df_result['ride_id'] = df['ride_id']
+    df_result['predicted_duration'] = y_pred
+
+
+if __name__ == '__main__':
+    year = int(sys.argv[1])
+    month = int(sys.argv[2])
+
+    main(year, month)
