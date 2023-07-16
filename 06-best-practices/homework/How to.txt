@@ -1,0 +1,60 @@
+Q3. Convert ipynb file to script <notebook_file>.py by running the below command from command line
+jupyter nbconvert --to script <notebook_file>.ipynb
+
+The below command will generate <notebook_file>.py without jupyter cell number
+jupyter nbconvert --to script --no-prompt <notebook_file>.ipynb
+
+
+Q4. 
+mkdir web-service
+cd web-service
+pipenv install scikit-learn==1.2.2 flask --python=3.10
+pipenv shell
+
+Notes
+---------
+pipenv uses the current directory as the root of the environment. So creating a directory and moving to it is important.
+
+--python=3.10 restricts the Python version to Major version 3.10. pipenv searches for locally installed Python interpreters first before resorting to downloading a new interpreter.
+
+pipenv shell activates the environment.
+
+Note: Dev packages in pipenv: Sometimes we want to add certain packages but only in the current environment without writing them to the production environment such as testing packages. We use pipenv install --dev <packagename> instead of pipenv install.
+
+This creates two files in our directory: Pipfile and Pipfile.lock. For information on what these files do read this. In short Pipfile stores the versions of the packages that we want (like scikit-learn, Flask) and Pipfile.lock stores the dependency tree to avoid for example updating Numpy for scikit-learn and breaking Flask in the process.
+
+Q5.Parametrize the script , pass the year and month configurable via CLI
+python starter.py 2022 3
+
+Q6.To package the script in docker container
+---------------------------------------------
+In the DockerFile pull the below base image provided
+
+FROM svizor/zoomcamp-model:mlops-3.10.0-slim
+
+Then build and run the docker image
+--------------------------
+docker build -t homework .
+docker run -it homework python starter.py 2022 4
+
+To push data to s3
+-------------------
+docker run -it -e AWS_ACCESS_KEY_ID=<your_access_key> \
+              -e AWS_SECRET_ACCESS_KEY=<your_secret_key> \
+              -e AWS_DEFAULT_REGION=<your_region> \
+              homework python starter.py 2022 4
+
+The use of Pipenv provides the following benefits:
+------------------------------------------------------
+
+Dependency Management: Pipenv allows you to specify project dependencies in a "Pipfile" and "Pipfile.lock" file. It tracks the exact versions of the packages required for your project, ensuring consistent and reproducible builds.
+
+Virtual Environments: Pipenv automatically creates a virtual environment specific to your project. This isolates your project's dependencies from the system-wide Python installation and other projects, preventing conflicts and ensuring a clean and controlled environment for development.
+
+Simplified Workflow: Pipenv simplifies the workflow by combining package installation and virtual environment management into a single tool. It automatically manages the virtual environment and installs the required packages with the correct versions.
+
+Environment Reproducibility: By using Pipenv, you can easily recreate the exact environment used for development, testing, or production. The "Pipfile.lock" file ensures that the same versions of packages are installed consistently across different environments.
+
+Collaboration: Pipenv provides a straightforward way to share your project with others. The "Pipfile" and "Pipfile.lock" files contain all the necessary information to recreate the environment, making it easier for collaborators to set up and work on the project.
+
+While Conda is a popular choice for managing environments and dependencies in machine learning projects, Pipenv offers a lightweight and Python-specific alternative with similar functionality. It is particularly useful for projects that primarily rely on Python packages and do not require the additional features provided by Conda.
